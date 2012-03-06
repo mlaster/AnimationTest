@@ -87,7 +87,9 @@ static CGFloat BottomMargin = 7.0f;
         
         view = [self.customViews objectAtIndex:_activeView];
         if (debug) {
-            NSLog(@"sublayer: %@", [[view.layer.sublayers objectAtIndex:0] debugDescription]);
+            CALayer *animatedLayer = [view.layer.sublayers objectAtIndex:0];
+            NSLog(@"animatedLayer: %@", [animatedLayer debugDescription]);
+            NSLog(@"animationKeys: %@", [animatedLayer animationKeys]);
         }
         [self addSubview:view];
         [self setNeedsLayout];
